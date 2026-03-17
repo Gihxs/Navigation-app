@@ -4,18 +4,17 @@ Exercicio - Aplicativo simples desenvolvido utilizando Kotlin e Jetpack Compose,
 
 📱 Telas do aplicativo
 
-Tela de Login
+  Login e Menu
+<p align="center">
+  <img src="images/Login.png" width="200"/>
+  <img src="images/Menu.png" width="200"/>
+</p>
 
-<img src="images/Login.png" width="250"/>
-
-Menu
-<img src="images/Menu.png" width="250"/>
-
-Perfil
-<img src="images/Perfil.png" width="250"/>
-
-Pedidos
-<img src="images/Pedidos.png" width="250"/>
+  Perfil e Pedidos
+<p align="center">
+  <img src="images/Perfil.png" width="200"/>
+  <img src="images/Pedidos.png" width="200"/>
+</p>
 
 
 🛠 Tecnologias utilizadas

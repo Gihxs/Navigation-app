@@ -40,8 +40,15 @@ class MainActivity : ComponentActivity() {
                         composable(route = "pedidos") {
                             PedidosScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
-                        composable(route = "perfil") {
-                            PerfilScreen(modifier = Modifier.padding(innerPadding), navController)
+                        composable(route = "perfil/{nome}") { // define rota com parâmetro obrigatório "nome"
+
+                            val nome: String? =
+                                it.arguments?.getString("nome", "Usuário Genérico")
+
+                            PerfilScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController,
+                                nome!!)
                         }
                     }
                 }

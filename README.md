@@ -24,7 +24,7 @@ parâmetros obrigatórios, opcionais, simples e múltiplos.
 
 Perfil com parâmetros e Pedidos com parâmetro opcional:
 
--Exemplos utilizando valores fictícios como "Fulano de tal" e "25 anos" e "Cliente XPTO":
+-Exemplos utilizando valores fictícios como "Fulano de tal", "25 anos" e "Cliente XPTO":
 <p align="center">
   <img src="images/PerfilParam.png" width="200"/>
   <img src="images/PedidosParam.png" width="200"/>

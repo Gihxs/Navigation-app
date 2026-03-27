@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -53,15 +54,27 @@ class MainActivity : ComponentActivity() {
                         }
 
                         // define rota com parâmetro obrigatório "nome"
-                        composable(route = "perfil/{nome}") {
+                        composable(
+                            route = "perfil/{nome}/{idade}",
+                            arguments = listOf(
+                                navArgument("nome") { type = NavType.StringType },
+                                navArgument("idade") {
+                                    type = NavType.IntType
+                                } // define "idade" como parâmetro inteiro
+                            )
+                        ) {
 
+                            // recupera os parâmetros enviados na navegação
                             val nome: String? =
                                 it.arguments?.getString("nome", "Usuário Genérico")
+                            val idade: Int? =
+                                it.arguments?.getInt("Idade", 0)
 
                             PerfilScreen(
                                 modifier = Modifier.padding(innerPadding),
                                 navController,
-                                nome!!
+                                nome!!,
+                                idade!! // garante que a idade não seja nula
                             )
                         }
                     }

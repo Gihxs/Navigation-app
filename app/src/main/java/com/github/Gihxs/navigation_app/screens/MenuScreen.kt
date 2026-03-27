@@ -43,7 +43,7 @@ fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
         ) {
             Button(
                 // navega para a tela de perfil enviando o nome como parâmetro
-                onClick = { navController.navigate("perfil/Fulano de tal") },
+                onClick = { navController.navigate("perfil/Fulano de tal/25") },
                 colors = ButtonDefaults.buttonColors(Color.White),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {

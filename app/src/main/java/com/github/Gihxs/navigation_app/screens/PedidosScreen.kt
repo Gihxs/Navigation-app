@@ -18,17 +18,25 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun PedidosScreen(modifier: Modifier = Modifier, navController: NavController) {
-    Box(modifier = modifier.fillMaxSize().background(Color(0xFF7AC7F1)).padding(32.dp)
+fun PedidosScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController,
+    cliente: String? // recebe o parâmetro opcional -cliente
+) {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFF7AC7F1))
+            .padding(32.dp)
     ) {
         Text(
-            text = "PEDIDOS",
+            text = "PEDIDOS - $cliente",  // exibe o cliente recebido - ou o valor padrão
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
         Button(
-            onClick = {navController.navigate("menu")},
+            onClick = { navController.navigate("menu") },
             colors = ButtonDefaults.buttonColors(Color.White),
             modifier = Modifier.align(Alignment.Center)
         ) {

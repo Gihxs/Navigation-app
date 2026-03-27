@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.github.Gihxs.navigation_app.screens.LoginScreen
 import com.github.Gihxs.navigation_app.screens.MenuScreen
 import com.github.Gihxs.navigation_app.screens.PedidosScreen
@@ -37,9 +38,20 @@ class MainActivity : ComponentActivity() {
                         composable(route = "menu") {
                             MenuScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
-                        composable(route = "pedidos") {
-                            PedidosScreen(modifier = Modifier.padding(innerPadding), navController)
+                        // define rota com parâmetro opcional "cliente", usando valor padrão caso não seja enviado
+                        composable(
+                            route = "pedidos?cliente={cliente}",
+                            arguments = listOf(navArgument("cliente") {
+                                defaultValue = "Cliente Genérico"
+                            })
+                        ) {
+                            PedidosScreen(
+                                modifier = Modifier.padding(innerPadding),
+                                navController,
+                                it.arguments?.getString("cliente")
+                            )
                         }
+
                         // define rota com parâmetro obrigatório "nome"
                         composable(route = "perfil/{nome}") {
 
@@ -49,7 +61,8 @@ class MainActivity : ComponentActivity() {
                             PerfilScreen(
                                 modifier = Modifier.padding(innerPadding),
                                 navController,
-                                nome!!)
+                                nome!!
+                            )
                         }
                     }
                 }

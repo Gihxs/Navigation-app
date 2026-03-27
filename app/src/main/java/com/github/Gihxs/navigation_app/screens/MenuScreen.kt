@@ -24,7 +24,10 @@ import androidx.navigation.NavController
 @Composable
 fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
     Box(
-        modifier = modifier.fillMaxSize().background(Color(0xFF7F2CC7)).padding(32.dp)
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFF7F2CC7))
+            .padding(32.dp)
     ) {
         Text(
             text = "MENU",
@@ -34,7 +37,9 @@ fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
         )
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxWidth().align(Alignment.Center)
+            modifier = Modifier
+                .fillMaxWidth()
+                .align(Alignment.Center)
         ) {
             Button(
                 // navega para a tela de perfil enviando o nome como parâmetro
@@ -50,7 +55,8 @@ fun MenuScreen(modifier: Modifier = Modifier, navController: NavController) {
             }
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { navController.navigate("pedidos") },
+                // navega para pedidos enviando o parâmetro opcional "cliente"
+                onClick = { navController.navigate("pedidos?cliente=Cliente XPTO") },
                 colors = ButtonDefaults.buttonColors(Color.White),
                 modifier = Modifier.size(width = 200.dp, height = 48.dp)
             ) {

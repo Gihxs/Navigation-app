@@ -1,4 +1,4 @@
-App de Navegação - Android
+## App de Navegação - Android
 
 Exercicio - Aplicativo simples desenvolvido utilizando Kotlin e Jetpack Compose, com navegação entre
 telas.
@@ -17,7 +17,7 @@ Perfil e Pedidos
   <img src="images/Pedidos.png" width="200"/>
 </p>
 
-## Atualização - Passagem de Parâmetros
+Atualização - Passagem de Parâmetros
 
 Foram implementadas diferentes formas de navegação com envio de dados entre telas, incluindo
 parâmetros obrigatórios, opcionais, simples e múltiplos.
